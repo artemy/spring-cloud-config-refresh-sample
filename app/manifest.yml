@@ -1,0 +1,16 @@
+applications:
+  - name: spring-cloud-config-refresh
+    instances: 1
+    memory: 1G
+    disk_quota: 512M
+    path: target/app.jar
+    timeout: 180
+    services:
+      - artem-config
+    buildpacks:
+      - java_buildpack_offline
+    env:
+      SPRING_PROFILES_ACTIVE: cloud
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+      JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
+

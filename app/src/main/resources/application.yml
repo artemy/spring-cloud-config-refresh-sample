@@ -1,0 +1,7 @@
+spring.application.name: spring-cloud-config-refresh
+
+logging.level:
+  ROOT: WARN
+  com.github.artemy: INFO
+
+app.name: Elon Musk
